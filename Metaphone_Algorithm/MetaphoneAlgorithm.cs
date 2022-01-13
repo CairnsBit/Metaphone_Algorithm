@@ -280,7 +280,7 @@ namespace Algorithm
                     continue;
                 }
 
-                //  W - Out of range exception
+                //  W
                 if (word[i].Equals('w'))
                 {
                     if (i < word.Length - 1)
@@ -304,7 +304,7 @@ namespace Algorithm
                     continue;
                 }
 
-                //  Y - Out of range exception
+                //  Y
                 if (word[i].Equals('y'))
                 {
                     if (i < word.Length - 1)
@@ -330,6 +330,7 @@ namespace Algorithm
             }
             return result.ToString().ToUpper();
         }
+
         static void Main(string[] args)
         {
         }
