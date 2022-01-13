@@ -12,7 +12,6 @@ namespace Algorithm
             bool diffFirst = false;
             var result = new StringBuilder();
 
-
             for (int i = 0; i < word.Length; i++)
             {
                 //  Vowel letter first
@@ -85,7 +84,7 @@ namespace Algorithm
                 //  C
                 if (word[i].Equals('c'))
                 {
-                    if (i + 3 <= word.Length)
+                    if (i + 3 < word.Length)
                     {
                         if (word.Substring(i, 3).Equals("cia"))
                         {
@@ -118,7 +117,7 @@ namespace Algorithm
                 //  D
                 if (word[i].Equals('d'))
                 {
-                    if (i + 3 <= word.Length)
+                    if (i + 3 < word.Length)
                     {
                         if (word.Substring(i, 3).Equals("dge") | word.Substring(i, 3).Equals("dgy") | word.Substring(i, 3).Equals("dgi"))
                         {
@@ -141,7 +140,7 @@ namespace Algorithm
                 //  G
                 if (word[i].Equals('g'))
                 {
-                    if (i + 2 <= word.Length)
+                    if (i + 2 < word.Length)
                     {
                         if (!word.Substring(i, 2).Equals("gh") & !word.Substring(i, 2).Equals("gn") & !word.Substring(i, 2).Equals("gned") & !"aeiou".Contains(word[i + 1]) & i != word.Length)
                         {
@@ -162,7 +161,7 @@ namespace Algorithm
                 //  H
                 if (word[i].Equals('h'))
                 {
-                    if (i + 1 <= word.Length & i - 1 >= 0)
+                    if (i + 1 < word.Length & i - 1 >= 0)
                     {
                         if (!"aeiou".Contains(word[i - 1]) & !"aeiou".Contains(word[i + 1]))
                         {
@@ -187,7 +186,7 @@ namespace Algorithm
                 //  P
                 if (word[i].Equals('p'))
                 {
-                    if (i + 1 <= word.Length)
+                    if (i + 1 < word.Length)
                     {
                         if (word.Substring(i, 2).Equals("ph"))
                         {
@@ -217,7 +216,7 @@ namespace Algorithm
                 //  S
                 if (word[i].Equals('s'))
                 {
-                    if (i + 3 <= word.Length)
+                    if (i + 3 < word.Length)
                     {
                         if (word.Substring(i, 2).Equals("sh") | word.Substring(i, 3).Equals("sio") | word.Substring(i, 3).Equals("sia"))
                         {
@@ -245,7 +244,7 @@ namespace Algorithm
                 //  T
                 if (word[i].Equals('t'))
                 {
-                    if (i + 3 <= word.Length)
+                    if (i + 3 < word.Length)
                     {
                         if (word.Substring(i, 3).Equals("tia") | word.Substring(i, 3).Equals("tio"))
                         {
@@ -284,13 +283,17 @@ namespace Algorithm
                 //  W - Out of range exception
                 if (word[i].Equals('w'))
                 {
-                    if (i + 1 <= word.Length)
+                    if (i < word.Length - 1)
                     {
-                        if (word.Substring(i, 2).Equals("wa") | word.Substring(i, 2).Equals("we") | word.Substring(i, 2).Equals("wi") | word.Substring(i, 2).Equals("wo") | word.Substring(i, 2).Equals("wu"))
+                        if (word[i+1].Equals('a') | word[i + 1].Equals('e') | word[i + 1].Equals('i') | word[i + 1].Equals('o') | word[i + 1].Equals('u'))
                         {
                             result.Append('w');
                             continue;
                         }
+                    }
+                    else
+                    {
+                        continue;
                     }
                 }
 
@@ -304,13 +307,17 @@ namespace Algorithm
                 //  Y - Out of range exception
                 if (word[i].Equals('y'))
                 {
-                    if (i + 1 <= word.Length)
+                    if (i < word.Length - 1)
                     {
-                        if (word.Substring(i, 2).Equals("ya") | word.Substring(i, 2).Equals("ye") | word.Substring(i, 2).Equals("yi") | word.Substring(i, 2).Equals("yo") | word.Substring(i, 2).Equals("yu"))
+                        if (word[i + 1].Equals('a') | word[i + 1].Equals('e') | word[i + 1].Equals('i') | word[i + 1].Equals('o') | word[i + 1].Equals('u'))
                         {
                             result.Append('y');
                             continue;
                         }
+                    }
+                    else
+                    {
+                        continue;
                     }
                 }
 

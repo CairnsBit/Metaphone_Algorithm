@@ -25,9 +25,9 @@ namespace Metaphone_Algorithm_Tests
         [TestMethod]
         public void xanadu() => Assert.AreEqual("SNT", MetaphoneAlgorithm.toPhonetic("xanadu"));
         [TestMethod]
-        public void alleyway() => Assert.AreEqual("SNT", MetaphoneAlgorithm.toPhonetic("alleyway"));
+        public void alleyway() => Assert.AreEqual("ALLW", MetaphoneAlgorithm.toPhonetic("alleyway"));
         [TestMethod]
-        public void raw() => Assert.AreEqual("SNT", MetaphoneAlgorithm.toPhonetic("raw"));
+        public void raw() => Assert.AreEqual("R", MetaphoneAlgorithm.toPhonetic("raw"));
     }
 
 }
